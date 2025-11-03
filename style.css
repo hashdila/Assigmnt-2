@@ -1,8 +1,7 @@
 
 
 
-   /* Root Variables 
-   (Theme Colors) */
+  
 
    :root {
     --accent: #0b5fff;
@@ -202,9 +201,9 @@
     text-decoration: none;
   }
   
-  /* ------------------------------
-     Declaration Section
-  ------------------------------ */
+
+     /* Declaration Section */
+ 
   .declaration {
     margin-top: 18px;
     font-size: 14px;
@@ -216,9 +215,9 @@
     margin-top: 10px;
   }
   
-  /* ------------------------------
-     Footer
-  ------------------------------ */
+  
+     /* Footer */
+
   .foot-note {
     text-align: right;
     color: var(--muted);

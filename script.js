@@ -1,20 +1,34 @@
-document.getElementById("infoForm").addEventListener("submit", (e) => {
-    e.preventDefault();
+document.getElementById("infoForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
 
-    // Simulate backend POST response
-    const data = {
-      name: document.getElementById("name").value,
-      role: document.getElementById("role").value,
-      email: document.getElementById("email").value,
-      phone: document.getElementById("phone").value,
-      linkedin: document.getElementById("linkedin").value,
-      profile: document.getElementById("profile").value,
-    };
+  // Get form inputs
+  const data = {
+    name: document.getElementById("name").value,
+    role: document.getElementById("role").value,
+    email: document.getElementById("email").value,
+    phone: document.getElementById("phone").value,
+    linkedin: document.getElementById("linkedin").value,
+    profile: document.getElementById("profile").value,
+  };
 
-    // “Pretend” we sent this to /info and got same data back
-    const response = data; // simulate /info JSON response
+  try {
 
-    // Update CV with "response"
+    const res = await fetch("/info", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+
+
+    let response;
+    if (res.ok) {
+      response = await res.json();
+    } else {
+      console.warn("⚠️ Backend not reachable .");
+      response = data;
+    }
+
+    // Update CV on page
     document.getElementById("cv-name").textContent = response.name;
     document.getElementById("cv-role").textContent = response.role;
     document.getElementById("cv-phone").textContent = response.phone;
@@ -22,5 +36,8 @@ document.getElementById("infoForm").addEventListener("submit", (e) => {
     document.getElementById("cv-linkedin").innerHTML = `<a href="${response.linkedin}" target="_blank">${response.linkedin}</a>`;
     document.getElementById("cv-profile").textContent = response.profile;
 
-    alert("CV updated successfully!");
-  });
+    alert("✅ CV updated successfully!");
+  } catch (error) {
+    alert("❌ Error: " + error.message);
+  }
+});
