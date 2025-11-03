@@ -36,8 +36,8 @@ document.getElementById("infoForm").addEventListener("submit", async (e) => {
     document.getElementById("cv-linkedin").innerHTML = `<a href="${response.linkedin}" target="_blank">${response.linkedin}</a>`;
     document.getElementById("cv-profile").textContent = response.profile;
 
-    alert("✅ CV updated successfully!");
+    alert("CV updated successfully!");
   } catch (error) {
-    alert("❌ Error: " + error.message);
+    alert("Error: " + error.message);
   }
 });
