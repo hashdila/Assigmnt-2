@@ -1,0 +1,294 @@
+
+
+
+   /* Root Variables 
+   (Theme Colors) */
+
+   :root {
+    --accent: #0b5fff;
+    --muted: #666;
+    --text: #222;
+    --page-bg: #f6f8fb;
+    --paper: #fff;
+    --max-width: 900px;
+    --gap: 18px;
+    --font-sans: "Helvetica Neue", Arial, sans-serif;
+  }
+  
+  
+     /* Base Styles */
+
+  * {
+    box-sizing: border-box;
+  }
+  
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+    background: var(--page-bg);
+    font-family: var(--font-sans);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+  }
+  
+
+     /* Page Container */
+
+  .page {
+    max-width: var(--max-width);
+    margin: 26px auto;
+    padding: 28px;
+    background: var(--paper);
+    box-shadow: 0 6px 18px rgba(20, 20, 40, 0.06);
+  }
+  
+  
+     /* Header Section */
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid #e6ebf3;
+    padding-bottom: 12px;
+    margin-bottom: 18px;
+  }
+  
+  .name {
+    font-size: 26px;
+    margin: 0;
+    color: #0b2f6b;
+  }
+  
+  .role {
+    margin: 4px 0 0;
+    font-weight: 600;
+    color: var(--muted);
+  }
+  
+  .contact p {
+    margin: 2px 0;
+    font-size: 14px;
+  }
+  
+  .contact a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  
+  
+     /* Profile Section */
+
+  .profile {
+    margin-bottom: var(--gap);
+  }
+  
+  .profile h2 {
+    font-size: 15px;
+    color: var(--accent);
+    margin: 0 0 8px;
+  }
+  
+  .profile p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--muted);
+  }
+  
+ 
+     /* Two-Column Layout */
+ 
+  .two-col {
+    display: flex;
+    gap: 30px;
+    margin-bottom: var(--gap);
+  }
+  
+  .col {
+    flex: 1;
+  }
+  
+  .left-col h2,
+  .right-col h2 {
+    font-size: 15px;
+    color: var(--accent);
+    margin-top: 0;
+  }
+  
+  
+     /* Work / Education / Experience */
+
+  .job {
+    margin-bottom: 14px;
+  }
+  
+  .job h3 {
+    margin: 0;
+    font-size: 15px;
+  }
+  
+  .meta {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  
+  .job ul {
+    margin: 6px 0 0 18px;
+    padding: 0;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+  
+
+     /* Projects Section */
+ 
+  .projects {
+    margin-top: 6px;
+    margin-bottom: var(--gap);
+  }
+  
+  .projects h2 {
+    font-size: 15px;
+    color: var(--accent);
+    margin: 0 0 8px;
+  }
+
+  .projects li {
+    margin-bottom: 4px;
+}
+  
+  
+  .project {
+    margin-bottom: 12px;
+  }
+  
+  .project h3 {
+    margin: 0;
+    font-size: 14px;
+  }
+  
+  .project p {
+    margin: 6px 0;
+    font-size: 14px;
+    color: var(--muted);
+  }
+  
+
+     /* References Section */
+
+  .references {
+    border-top: 1px solid #e6ebf3;
+    padding-top: 12px;
+    margin-top: var(--gap);
+  }
+  
+  .references h2 {
+    font-size: 15px;
+    color: var(--accent);
+    margin: 0 0 8px;
+  }
+  
+  .ref {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: var(--muted);
+  }
+  
+  .ref a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  
+  /* ------------------------------
+     Declaration Section
+  ------------------------------ */
+  .declaration {
+    margin-top: 18px;
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+  
+  .sig {
+    margin-top: 10px;
+  }
+  
+  /* ------------------------------
+     Footer
+  ------------------------------ */
+  .foot-note {
+    text-align: right;
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 18px;
+  }
+
+  .form-section {
+    margin-top: 20px;
+    border-top: 1px solid #e6ebf3;
+    padding-top: 15px;
+  }
+
+  input, textarea {
+    width: 100%;
+    padding: 6px;
+    margin: 4px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: var(--font-sans);
+  }
+
+  button {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  
+  /* ------------------------------
+     Responsive Design
+  ------------------------------ */
+  @media (max-width: 760px) {
+    .two-col {
+      flex-direction: column;
+    }
+  
+    .header {
+      flex-direction: column;
+      gap: 12px;
+      align-items: flex-start;
+    }
+  
+    .contact {
+      margin-top: 6px;
+    }
+  }
+  
+
+  @media print {
+    body {
+      background: #fff;
+    }
+  
+    .page {
+      box-shadow: none;
+      margin: 0;
+      padding: 20px;
+    }
+  
+    a {
+      color: #000;
+      text-decoration: none;
+    }
+  
+    .foot-note {
+      display: none;
+    }
+  }
+  
